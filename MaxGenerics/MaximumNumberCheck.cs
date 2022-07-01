@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace uc2_findmaxof3float
+namespace MaxGenerics
 {
     internal class MaximumNumberCheck
     {
-        public static float MaximumIntegerNumber(float firstValue, float secondValue, float thirdValue)
+        public static int MaximumIntegerNumber(int firstValue, int secondValue, int thirdValue)
         {
             if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0)
             {
@@ -24,5 +24,6 @@ namespace uc2_findmaxof3float
             }
             throw new Exception("firstNumber,secondNumber and thirdNumber are same");
         }
+
     }
 }
