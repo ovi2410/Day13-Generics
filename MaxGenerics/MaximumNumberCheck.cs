@@ -8,33 +8,50 @@ namespace MaxGenerics
 {
     internal class MaximumNumberCheck<T> where T : IComparable
     {
-        public static T MaximumStringNumber(T firstString, T secondString, T thirdString)
+        public T firstValue, secondValue, thirdValue;
+        public MaximumNumberCheck(T firstValue, T secondValue, T thirdValue)
         {
-            if (firstString.CompareTo(secondString) > 0 && firstString.CompareTo(thirdString) > 0 ||
-                firstString.CompareTo(secondString) >= 0 && firstString.CompareTo(thirdString) > 0 ||
-                firstString.CompareTo(secondString) > 0 && firstString.CompareTo(thirdString) >= 0)
+            // this is a constructor in which we are init the instance variable
+            this.firstValue = firstValue;
+            this.secondValue = secondValue;
+            this.thirdValue = thirdValue;
+
+
+        }
+        public static T MaxValue(T firstValue, T secondValue, T thirdValue)
+        {
+            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0 ||
+                firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) > 0 ||
+                firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) >= 0)
             {
-                return firstString;
+                return firstValue;
             }
 
-            if (secondString.CompareTo(firstString) > 0 && secondString.CompareTo(thirdString) > 0 ||
-                secondString.CompareTo(firstString) >= 0 && secondString.CompareTo(thirdString) > 0 ||
-                secondString.CompareTo(firstString) > 0 && secondString.CompareTo(thirdString) >= 0)
+            if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0 ||
+                secondValue.CompareTo(firstValue) >= 0 && secondValue.CompareTo(thirdValue) > 0 ||
+                secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) >= 0)
             {
-                return secondString;
+                return secondValue;
             }
 
-            if (thirdString.CompareTo(firstString) > 0 && thirdString.CompareTo(secondString) > 0 ||
-                thirdString.CompareTo(firstString) >= 0 && thirdString.CompareTo(secondString) > 0 ||
-                thirdString.CompareTo(firstString) > 0 && thirdString.CompareTo(secondString) >= 0)
+            if (thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) > 0 ||
+                thirdValue.CompareTo(firstValue) >= 0 && thirdValue.CompareTo(secondValue) > 0 ||
+                thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) >= 0)
             {
-                return thirdString;
+                return thirdValue;
             }
-            throw new Exception("firstNumber,secondNumber and thirdNumber are same");
+
+            return default;
+
         }
 
 
+        public T MaxMethod()
+        {
+            //Calling MaxValue Method internally from this method
+            T max = MaximumNumberCheck<T>.MaxValue(this.firstValue, this.secondValue, this.thirdValue);
+            return max;
+        }
+
     }
 }
-    
-

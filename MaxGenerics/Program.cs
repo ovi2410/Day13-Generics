@@ -5,12 +5,13 @@ using MaxGenerics;
 
 Console.WriteLine("---- Find max ---- ");
 
-int output1 = MaximumNumberCheck<int>.MaximumStringNumber(15, 32, 64);
-Console.WriteLine("Maximum int [TC.1]:- " + output1);
+MaximumNumberCheck<int> Output1 = new MaximumNumberCheck<int>(11, 22, 33);
+Console.WriteLine("Max Int type Value :- " + Output1.MaxMethod());
 
-float output2 = MaximumNumberCheck<float>.MaximumStringNumber(45.5f, 98.54f, 56.21f);
-Console.WriteLine("Maximum float [TC.1]:- " + output2);
+MaximumNumberCheck<float> Output2 = new MaximumNumberCheck<float>(45.5f, 98.54f, 56.21f);
+Console.WriteLine("Max Float type Value :- " + Output2.MaxMethod());
 
-string output3 = MaximumNumberCheck<string>.MaximumStringNumber("Peach", "Banana", "Apple");
-Console.WriteLine("Maximum String [TC.1]:- " + output3);
+MaximumNumberCheck<string> Output3 = new MaximumNumberCheck<string>("Peach", "Banana", "Apple");
+Console.WriteLine("Max String type Value :- " + Output3.MaxMethod());
+
 
