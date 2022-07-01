@@ -5,52 +5,33 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MaxGenerics
-{
-    internal class MaximumNumberCheck<T> where T : IComparable
+{ 
+    internal class MaximumNumberCheck
     {
-        public T firstValue, secondValue, thirdValue;
-        public MaximumNumberCheck(T firstValue, T secondValue, T thirdValue)
+        public static string MaximumStringNumber(string firstString, string secondString, string thirdString)
         {
-            // this is a constructor in which we are init the instance variable
-            this.firstValue = firstValue;
-            this.secondValue = secondValue;
-            this.thirdValue = thirdValue;
-
-
-        }
-        public static T MaxValue(T firstValue, T secondValue, T thirdValue)
-        {
-            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0 ||
-                firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) > 0 ||
-                firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) >= 0)
+            if (firstString.CompareTo(secondString) > 0 && firstString.CompareTo(thirdString) > 0 ||
+                firstString.CompareTo(secondString) >= 0 && firstString.CompareTo(thirdString) > 0 ||
+                firstString.CompareTo(secondString) > 0 && firstString.CompareTo(thirdString) >= 0)
             {
-                return firstValue;
+                return firstString;
             }
 
-            if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0 ||
-                secondValue.CompareTo(firstValue) >= 0 && secondValue.CompareTo(thirdValue) > 0 ||
-                secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) >= 0)
+            if (secondString.CompareTo(firstString) > 0 && secondString.CompareTo(thirdString) > 0 ||
+                secondString.CompareTo(firstString) >= 0 && secondString.CompareTo(thirdString) > 0 ||
+                secondString.CompareTo(firstString) > 0 && secondString.CompareTo(thirdString) >= 0)
             {
-                return secondValue;
+                return secondString;
             }
 
-            if (thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) > 0 ||
-                thirdValue.CompareTo(firstValue) >= 0 && thirdValue.CompareTo(secondValue) > 0 ||
-                thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) >= 0)
+            if (thirdString.CompareTo(firstString) > 0 && thirdString.CompareTo(secondString) > 0 ||
+                thirdString.CompareTo(firstString) >= 0 && thirdString.CompareTo(secondString) > 0 ||
+                thirdString.CompareTo(firstString) > 0 && thirdString.CompareTo(secondString) >= 0)
             {
-                return thirdValue;
+                return thirdString;
             }
-
-            return default;
-
+            throw new Exception("firstNumber,secondNumber and thirdNumber are same");
         }
 
-
-        public T MaxMethod()
-        {
-            //Calling MaxValue Method internally from this method
-            T max = MaximumNumberCheck<T>.MaxValue(this.firstValue, this.secondValue, this.thirdValue);
-            return max;
-        }
     }
 }
