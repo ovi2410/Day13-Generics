@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace uc1_findmaxof3int
+namespace MaxGenerics
 {
     class MaximumNumberCheck
     {
