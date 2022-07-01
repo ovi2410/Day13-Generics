@@ -52,6 +52,5 @@ namespace MaxGenerics
             T max = MaximumNumberCheck<T>.MaxValue(this.firstValue, this.secondValue, this.thirdValue);
             return max;
         }
-
     }
 }
