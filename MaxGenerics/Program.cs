@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 //Console.WriteLine("Hello, World!");
 
-using uc1_findmaxof3int;
+using MaxGenerics;
 
 Console.WriteLine("---- Find max Number ---- ");
 int output = MaximumNumberCheck.MaximumIntegerNumber(11, 22, 33);
